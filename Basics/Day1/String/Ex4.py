@@ -1,0 +1,8 @@
+name = input("What is your name:")
+print("Hello", name)
+name = name.upper()
+print("Hello", name)
+name = name.capitalize()
+print("Hello", name)
+list1 = name.split()
+print(list1[0].capitalize(), list1[1].capitalize())

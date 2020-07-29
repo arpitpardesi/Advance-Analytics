@@ -1,0 +1,9 @@
+Please create an html page named addEmployee.html
+with following fields:
+1) <form> tag with action attribute
+2) <table>
+3) text field for employeeId
+3) text field for employeeName
+3) text field for designation
+4) radio button for gender
+5) submit button

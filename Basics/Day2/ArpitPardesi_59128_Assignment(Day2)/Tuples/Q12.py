@@ -1,0 +1,5 @@
+a = (2, 4, 5, 6, 2, 3, 4, 4, 7)
+a=list(a)
+a.remove(4)
+a=tuple(a)
+print(a)
