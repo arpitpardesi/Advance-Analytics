@@ -5,5 +5,7 @@ data = {"Name" : ['Arpit','Anushka'],
         "Age"  : [22,22]}
 
 df = pd.DataFrame(data)
-print(df) 
+print(df.head(1))
+print("-----------------------")
+print(df.tail(1)) 
 
