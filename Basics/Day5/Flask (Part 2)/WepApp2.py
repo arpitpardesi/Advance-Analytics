@@ -6,9 +6,10 @@ app = Flask(__name__)
 def open():
     return render_template('WebApp_Input.html')
 
-@app.route('/Hello')
+@app.route('/hello')
 def handle_req():
     name = request.args.get('userName')
-    return 'Hello! '+ name
+    com = request.args.get('userComp')
+    return render_template('WebApp_Result.html', username=name, company=com)
 
 app.run(port=2830)
