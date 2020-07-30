@@ -1,2 +1,3 @@
-a=['h', 'e', 'l', 'l', 'o']
-print(len(a))
+a="fgdfg"
+a=list(a)
+print(a)
