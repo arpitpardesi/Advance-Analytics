@@ -10,13 +10,15 @@ def open():
 
 @app.route('/Hello')
 def handle():
+    time = datetime.datetime.now()
     n = request.args.get('userName')
     c = request.args.get('userComp')
+    a = int(request.args.get('age'))
     y = int(request.args.get('joining'))
-    time = datetime.datetime.now()
     exp = time.year - y
+    yearB = time.year - a
 
-    return render_template("WebApp_Result.html", username=n, company=c, year=y, yearExpe=exp)
+    return render_template("WebApp_Result.html", username=n, company=c, year=y, yearExpe=exp, age=a, yearBirth=yearB)
 
 
 app.run(port=2830)
