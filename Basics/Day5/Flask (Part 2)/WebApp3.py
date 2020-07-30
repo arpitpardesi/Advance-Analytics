@@ -1,6 +1,8 @@
-from flask import Flask,render_template,request
+from flask import Flask, render_template, request
+import datetime
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def open():
@@ -10,7 +12,11 @@ def open():
 def handle():
     n = request.args.get('userName')
     c = request.args.get('userComp')
-    y = request.args.get('yoj')
-    return render_template("WebApp_Result.html",username = n,company = c,year = y)
+    y = int(request.args.get('joining'))
+    time = datetime.datetime.now()
+    exp = time.year - y
+
+    return render_template("WebApp_Result.html", username=n, company=c, year=y, yearExpe=exp)
+
 
 app.run(port=2830)
