@@ -1,0 +1,22 @@
+<html>
+<head>
+    <link rel="stylesheet" href='static/main.css'>
+</head>
+<body>
+{{search_list}}
+<table>
+    <tr>
+        <th>Phrase</th>
+        <th>Letters</th>
+        <th>Result</th>
+    </tr>
+{% for record in search_list: %}
+    <tr>
+        <td>{{record[0]}}</td>
+        <td>{{record[0]}}</td>
+        <td>{{record[0]}}</td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>

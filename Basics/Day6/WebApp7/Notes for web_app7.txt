@@ -1,0 +1,1 @@
+web_app6 is to be connected to mysql database
