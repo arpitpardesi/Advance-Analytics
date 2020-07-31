@@ -12,25 +12,25 @@
     <tr>
         <th>Employee ID</th>
         <th>Name</th>
+        <th>Age</th>
         <th>Designation</th>
-
     </tr>
-
-   <tr>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td><a href=""> Edit </a></td>
-        <td><a href=""> Delete </a></td>
-
-    </tr>
-
+{% for i in list %}
     <tr>
-        <td><a href="/">Home Page</a></td>
-        <td>&nbsp;</td>
+        <td>{{i[0]}}</td>
+        <td>{{i[1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+        <td><a href="/toUpdate?id={{i[0]}}&name={{i[1]}}&age={{i[2]}}&desig={{i[3]}}" method=post> Edit </a></td>
+        <td><a href="/delete?id={{i[0]}}"  value = "{{i[0]}}}"> Delete </a></td>
+{% endfor %}
     </tr>
+
+
 </table>
-<br><br>
+<br>
+<a href="/">Home Page</a>
+<br>
 <p></p>
 
 </body>
