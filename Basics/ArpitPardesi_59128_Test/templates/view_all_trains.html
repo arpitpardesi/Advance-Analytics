@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css2.css">
+    <title>Title</title>
+</head>
+<body>
+<h2>Below is the List of All Trains </h2>
+
+<table>
+    <tr>
+        <th>Train ID</th>
+        <th>Name</th>
+        <th>Starting Station</th>
+        <th>Ending Station</th>
+
+    </tr>
+  {% for i in list %}
+    <tr>
+        <td>{{i[0]}}</td>
+        <td>{{i[1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+{% endfor %}
+   </tr>
+
+    <tr>
+        <td><a href="/">Home Page</a></td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<br><br>
+<p></p>
+
+</body>
+</html>
