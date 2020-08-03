@@ -14,6 +14,23 @@ def openEmployee():
     return render_template("add_employee_form.html")
 
 
+@app.route("/search_all_employees")
+def toSearch():
+    return render_template('search_employee_form.html')
+
+
+@app.route('/searchEmployee')
+def search():
+    con = get_connection()
+    id = request.args.get('id')
+    name = request.args.get('name')
+    sql = """select * from employee where emp_name like '%{0}%' """.format(name)
+    cursor = con.cursor(sql)
+    cursor.execute(sql)
+    sea = cursor.fetchall()
+    return render_template('view_all_employees.html', list=sea)
+
+
 @app.route('/add_employee')
 def addEmployee():
     id = int(request.args.get("id"))
@@ -22,7 +39,6 @@ def addEmployee():
     des = request.args.get("designation")
     addToDb(id, ename, age, des)
     return render_template("view_all_employees.html", list=getAll.all)
-
 
 @app.route('/get_all_employees')
 def getAll():
@@ -60,7 +76,7 @@ def updateEmployee():
     age = request.args.get('age')
     desig = request.args.get('designation')
     sql = """UPDATE employee SET emp_id = "%s", emp_name = "%s",emp_age = "%s", emp_desig="%s" WHERE emp_id = "%s" """ % (
-        id, name, age,desig, toUpdate.id)
+        id, name, age, desig, toUpdate.id)
     cursor = con.cursor(sql)
     cursor.execute(sql)
     con.commit()
