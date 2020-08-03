@@ -19,11 +19,10 @@ def toSearch():
     return render_template('search_employee_form.html')
 
 
-@app.route('/searchEmployee'X)
+@app.route('/searchEmployee', methods=["POST"])
 def search():
     con = get_connection()
-    id = request.args.get('id')
-    name = request.args.get('name')
+    name = request.form['name']
     sql = """select * from employee where emp_name like '{0}%' """.format(name)
     cursor = con.cursor(sql)
     cursor.execute(sql)
@@ -39,6 +38,7 @@ def addEmployee():
     des = request.args.get("designation")
     addToDb(id, ename, age, des)
     return render_template("view_all_employees.html", list=getAll.all)
+
 
 @app.route('/get_all_employees')
 def getAll():
