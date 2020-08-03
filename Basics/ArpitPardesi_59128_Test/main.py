@@ -15,8 +15,8 @@ def getAll():
     sql = """select * from train"""
     cursor = con.cursor(sql)
     cursor.execute(sql)
-    getAll.all = cursor.fetchall()
-    return render_template("view_all_trains.html", list=getAll.all)
+    all = cursor.fetchall()
+    return render_template("view_all_trains.html", list=all)
 
 
 @app.route('/toSearchId')
@@ -38,33 +38,32 @@ def toSearchES():
 def searchId():
     con = get_connection()
     id = request.form['id']
-    sql = """select * from train where train_id = '{0}%' """.format(id)
+    sql = """select * from train where train_id = '%s' """ %(id)
     cursor = con.cursor(sql)
     cursor.execute(sql)
-    sea = cursor.fetchall()
-    return render_template('view_all_trains.html', list=sea)
-
+    all = cursor.fetchall()
+    return render_template("view_all_trains.html", list=all)
 
 @app.route('/search_train_SS', methods=["POST"])
 def searchSs():
     con = get_connection()
-    name = request.form['name']
-    sql = """select * from employee where starting_station ='{0}' """.format(name)
+    name = request.form['startingStation']
+    sql = """select * from train where starting_station ='%s' """ %(name)
     cursor = con.cursor(sql)
     cursor.execute(sql)
-    sea = cursor.fetchall()
-    return render_template('view_all_trains.html', list=sea)
+    all = cursor.fetchall()
+    return render_template("view_all_trains.html", list=all)
 
 
 @app.route('/search_train_ES', methods=["POST"])
 def searchEs():
     con = get_connection()
-    name = request.form['name']
-    sql = """select * from employee where ending_station = '{0}%' """.format(name)
+    name = request.form['endingStation']
+    sql = """select * from train where ending_station = '%s' """ %(name)
     cursor = con.cursor(sql)
     cursor.execute(sql)
-    sea = cursor.fetchall()
-    return render_template('view_all_trains.html', list=sea)
+    all = cursor.fetchall()
+    return render_template("view_all_trains.html", list=all)
 
 
 def get_connection():
@@ -76,4 +75,4 @@ def get_connection():
     return con
 
 
-app.run(debug=True, port=2830)
+app.run(debug=True, port=3503)
