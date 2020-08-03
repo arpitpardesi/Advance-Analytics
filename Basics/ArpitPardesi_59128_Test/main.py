@@ -49,7 +49,7 @@ def searchId():
 def searchSs():
     con = get_connection()
     name = request.form['name']
-    sql = """select * from employee where emp_name like '{0}%' """.format(name)
+    sql = """select * from employee where starting_station ='{0}' """.format(name)
     cursor = con.cursor(sql)
     cursor.execute(sql)
     sea = cursor.fetchall()
@@ -60,7 +60,7 @@ def searchSs():
 def searchEs():
     con = get_connection()
     name = request.form['name']
-    sql = """select * from employee where emp_name like '{0}%' """.format(name)
+    sql = """select * from employee where ending_station = '{0}%' """.format(name)
     cursor = con.cursor(sql)
     cursor.execute(sql)
     sea = cursor.fetchall()
