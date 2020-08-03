@@ -19,12 +19,12 @@ def toSearch():
     return render_template('search_employee_form.html')
 
 
-@app.route('/searchEmployee')
+@app.route('/searchEmployee'X)
 def search():
     con = get_connection()
     id = request.args.get('id')
     name = request.args.get('name')
-    sql = """select * from employee where emp_name like '%{0}%' """.format(name)
+    sql = """select * from employee where emp_name like '{0}%' """.format(name)
     cursor = con.cursor(sql)
     cursor.execute(sql)
     sea = cursor.fetchall()

@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="static/css2.css">
-    <title>Title</title>
+    <title>CRUD Application</title>
 </head>
 <body>
 <h2>Welcome to Search Employee page</h2>
 
-<form action="/searchEmployee" method="POST">
+<form action="/searchEmployee">
+    <p>Enter starting letter of the name.</p>
 <table>
     <tr>
         <td>Employee Name:</td>
@@ -18,7 +19,7 @@
 </table>
 
 <p><input type="submit" value="Search"></p>
-    <p><button type="reset" value="">Reset</button></p>
+    <p><input type="reset" value="Reset"></p>
 </form>
 <br>
 <a href="/">Home Page</a>
