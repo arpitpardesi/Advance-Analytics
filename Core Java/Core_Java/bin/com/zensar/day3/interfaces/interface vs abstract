@@ -1,0 +1,16 @@
+Difference Between Abstract class and interface
+
+1) Abstract class is 0 to 100% abstract whereas
+   interface is 100% abstract.
+2) we use 'extends' for abstract class whereas
+   we use 'implements' for interface
+3) You can extend only one abstract class but
+   you are allowed to implement multiple interfaces
+4) Variables declared in a Java interface are
+   by default final.
+   An abstract class may contain non-final variables.
+5) An interface cannot implement another interface
+   but it can extend another interface
+6) Attributes in interface are by default public
+7) If we want to provide common, implemented functionality among all implementations of our component, use an abstract class. 
+   Abstract classes allow us to partially implement our class, whereas interfaces contain no implementation for any members.
