@@ -1,3 +1,3 @@
-a="fgdfg"
+a="fgdfgd"
 a=list(a)
 print(a)
