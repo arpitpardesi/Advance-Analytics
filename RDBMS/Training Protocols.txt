@@ -1,0 +1,14 @@
+Training Protocol:
+1) By default all will be in mute mode.
+2) Rules of Interaction of student:
+    In Chat window type the following:
+        y for yes
+        n for no
+        c for clear
+        q for question or query or doubt
+        qs? for can I speak and ask question
+        r for repeat
+        b for came back
+        a for audible
+        na for not audible
+        ci for connectivity issues
