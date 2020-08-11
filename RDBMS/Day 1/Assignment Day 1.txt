@@ -1,0 +1,9 @@
+Try to figure out the other combinations which are valid in 
+Data Integrity Rules? 
+Provide appropriate real life supporting example
+
+PK CHECK	
+FK NOT NULL
+FK UK
+UK NOT NULL
+FK INDEX
