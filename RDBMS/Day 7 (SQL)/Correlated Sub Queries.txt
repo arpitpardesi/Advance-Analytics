@@ -1,0 +1,17 @@
+Mechanism of Correlated Sub Queries:
+1) The execution process starts with Parent Query.
+2) The Parent Query gives the first record to child query.
+3) Child query executes taking input of that record.
+4) Then, Parent Query gives the next record to child query.
+5) Child query executes taking input of that record
+6) This process continues one by one for each record transferred 
+   by parent query to child query.
+7) After the last record is transferred and child query executes 
+   that record then, ultimately the desired records (0 or 1 or multiple 
+   records) will be shown in the output.
+
+Correleated Sub Query with Exists Operator:
+
+Whenever columns of the single table only needs to be displayed, but 
+based on the join condition, then istead of traditional inner join we 
+can use Correleated Sub Query with Exists Operator.

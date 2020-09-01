@@ -1,0 +1,67 @@
+Use Zensar_DB
+go
+
+drop table India
+go
+
+create table India
+(TrID Varchar(20),
+ Pname Varchar(40),
+ Qty Integer,
+ DOP Date,
+ Amount Integer)
+go
+
+create table Australia
+(TrID Varchar(20),
+ Pname Varchar(40),
+ Qty Integer,
+ DOP Date,
+ Amount Integer);
+
+Insert into India Values('Ind_101_C1','Washing Machine',1,'01-Jan-2019',20000)
+Insert into India Values('Ind_102_C3','LCD',1,'01-Jan-2019',25000)
+Insert into India Values('Ind_103_C2','LCD',1,'01-Jan-2019',20000)
+Insert into India Values('Ind_104_C2','LCD',1,'04-Jan-2019',19000)
+Insert into India Values('Ind_105_C1','Refrigerator',1,'04-Jan-2019',19000)
+Insert into India Values('Ind_106_C1','Refrigerator',1,'05-Jan-2019',20000)
+Insert into India Values('Ind_107_C3','Washing Machine',1,'05-Jan-2019',20000)
+Insert into India Values('Ind_108_C4','Washing Machine',1,'08-Jan-2019',25000)
+Insert into India Values('Ind_109_C1','Refrigerator',1,'11-Jan-2019',10000)
+Insert into India Values('Ind_110_C2','LCD',1,'12-Jan-2019',25000)
+Insert into India Values('Ind_111_C2','Washing Machine',1,'12-Jan-2019',19000)
+Insert into India Values('Ind_112_C3','LCD',1,'15-Jan-2019',20000)
+Insert into India Values('Ind_113_C4','LCD',1,'17-Jan-2019',20000)
+Insert into India Values('Ind_114_C3','Washing Machine',1,'18-Jan-2019',25000)
+Insert into India Values('Ind_115_C1','Washing Machine',1,'19-Jan-2019',19000)
+Insert into India Values('Ind_116_C1','Refrigerator',1,'19-Jan-2019',10000)
+Insert into India Values('Ind_117_C3','Chairs',4,'20-Jan-2019',20000)
+Insert into India Values('Ind_118_C2','Chairs',6,'20-Jan-2019',30000)
+Insert into India Values('Ind_119_C1','LCD',2,'26-Jan-2019',20000)
+Insert into India Values('Ind_120_C2','Washing Machine',1,'27-Jan-2019',25000)
+
+ ----------------------------------------------------------------------------------------
+Insert into Australia Values('Aus_101_C1','LCD',1,'01-Jan-2019',25000)
+Insert into Australia Values('Aus_102_C1','Dinning Table',1,'01-Jan-2019',25000)
+Insert into Australia Values('Aus_103_C2','Dinning Table',1,'03-Jan-2019',10000)
+Insert into Australia Values('Aus_104_C3','Sofa',1,'05-Jan-2019',10000)
+Insert into Australia Values('Aus_105_C3','Washing Machine',12,'05-Jan-2019',60000)
+Insert into Australia Values('Aus_106_C4','LCD',1,'06-Jan-2019',20000)
+Insert into Australia Values('Aus_107_C2','LCD',1,'06-Jan-2019',25000)
+Insert into Australia Values('Aus_108_C4','LCD',2,'09-Jan-2019',50000)
+Insert into Australia Values('Aus_109_C1','Sofa',1,'11-Jan-2019',25000)
+Insert into Australia Values('Aus_110_C2','Sofa',2,'12-Jan-2019',10000)
+Insert into Australia Values('Aus_111_C3','Sofa',10,'13-Jan-2019',50000)
+Insert into Australia Values('Aus_112_C3','Washing Machine',5,'16-Jan-2019',25000)
+Insert into Australia Values('Aus_113_C4','LCD',1,'16-Jan-2019',20000)
+Insert into Australia Values('Aus_114_C1','LCD',1,'18-Jan-2019',25000)
+Insert into Australia Values('Aus_115_C2','LCD',1,'18-Jan-2019',25000)
+Insert into Australia Values('Aus_116_C3','LCD',1,'18-Jan-2019',25000)
+Insert into Australia Values('Aus_117_C4','LCD',1,'22-Jan-2019',25000)
+Insert into Australia Values('Aus_118_C1','LCD',1,'22-Jan-2019',25000)
+Insert into Australia Values('Aus_119_C4','Sofa',1,'26-Jan-2019',25000)
+Insert into Australia Values('Aus_120_C2','Sofa',2,'27-Jan-2019',10000)
+Insert into Australia Values('Aus_121_C3','Refrigerator',4,'27-Jan-2019',20000)
+Insert into Australia Values('Aus_122_C1','Sofa',1,'29-Jan-2019',19000)
+Insert into Australia Values('Aus_123_C3','Refrigerator',20,'29-Jan-2019',100000)
+Insert into Australia Values('Aus_124_C2','Refrigerator',1,'30-Jan-2019',19000)

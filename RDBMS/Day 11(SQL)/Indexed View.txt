@@ -1,0 +1,32 @@
+Indexed Views:
+One and only Select statement is there which has:
+1) 7 tables  joins
+2) 3 separate sub queries
+3) 10 derived columns
+4) 8 null handling columns
+5) 5 Select statements with Union All  --- 28 minutes to executes
+------------------------------------------------------------
+Output of above complex statement can be 50,000 rows
+
+ 
+
+One solution can be:
+Copy those 50,000 rows in an TT . Done at 12:34 pm
+
+ 
+
+select * from #TT  --  2:00 pm
+But TT will NOT get refreshed if the base tables get changed.
+
+ 
+
+-----------------------------------------------------
+Approach of Indexed View:
+
+ 
+
+1) Create a normal view of that complex select statements.
+*2) We have to create Index on that View.
+When index is created on a View then those rows are "physically" copied in that view.
+Means that now the view will carry those 50,000 records.
+************  Indexed View have the ability of implicitly getting "Auto Refreshed" when the underlying tables data get changed!!!!!!

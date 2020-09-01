@@ -1,0 +1,11 @@
+Computed Column in a table:
+
+There are two types of Computed Columns in SS:
+
+1) Persisted : The computed value will physically get stored 
+   in the database.
+
+2) Not Persisted (By default): The computed value will physically 
+   NOT get stored in the database. But it will computed run time 
+   when select statement gets executed.
+

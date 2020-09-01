@@ -1,0 +1,16 @@
+Windowing Functions or Analytical Functions:
+1) These functions will eliminate the need of Correlated Sub Queries 
+   or Derived Tables or Set Operators or Self Contained Sub Queries 
+   for getting outputs of complex requirements.
+2) These functions are handy and easy for doing Top-N Analysis. 
+   No need of complex logic building.
+
+--To show the 2nd highest earner record within each department number.
+-- 3 SQL ways are there:
+/*
+1) Correlated Sub Queries (Difficult for logic building and bad from performance point of view
+2) Only Derived Tables (Okay kind of from both logic and performance point of view)
+3) Windows Functions along with Derived Tables (Easiest and also Optimized)
+4) MOST EASIEST WAY-- That Select statement along with Derioved Table and Windowing Functions should be inside a "View".
+Further query the view!!!!!!!
+*/

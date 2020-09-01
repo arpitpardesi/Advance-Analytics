@@ -1,0 +1,30 @@
+1) Self Contained or Simple or Non Correlated Sub Query:
+Mechanism is as follows:
+    Step 1) Always the child query gets executed first.
+    Step 2) It returns the output or data of output to its Parent Query
+    Step 3) Finally, then the parent query gets executed.
+ 
+When should we use Self Contained or Simple or Non Correlated Sub Queries?????
+Ans. Whenever we have a derived value or indirect value in the where clause for comparison then we can use Self Contained or Simple or Non Correlated Sub Query technique.
+We will get that derived value or indirect value through Sub Query.
+
+
+When should we use Self Contained or Simple or Non Correlated Sub Queries?????
+Ans. Whenever we have a derived value or indirect value or extracted value in the where clause for comparison then we can use Self Contained or Simple or Non Correlated Sub Query technique.
+We will get that derived value or indirect value or extracted value through Sub Query.
+
+ 
+
+select sal from emp where ename = 'SMITH' -- By this query we are deriving Smith's salary
+******** OR we can also say "Whenever where clause is NOT having hard coded value for comparison"*********
+
+Types of Self Contained or Simple or Non Correlated 
+Sub Queries are as follow:
+
+a) Single Row or Scalar
+b) Multi Row
+c) Along with Exists and Not Exists operators
+
+a) Single Row or Scalar Sub Query means when the CQ returns one and only one value to its parent.
+
+b) Multi Row Sub Query means when the CQ returns more than one value to its parent.

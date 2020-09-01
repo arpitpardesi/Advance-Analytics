@@ -1,0 +1,73 @@
+Overview of Backup & Restoring Database:
+
+ 
+
+Backup?
+
+ 
+
+1) Always backup is taken of data files and log files.
+
+ 
+
+There are 2 types of Backups as per Operational Model:
+a) Cold Backup
+b) Hot Backup
+
+ 
+
+a) Cold Backup: Cold Backup means the backup is taken when the Database 
+   is offline or when the SQL Server Service is not running.
+   Cold Backup is taken using operating system commands of copy, etc.
+   Gernarrly done through command prompt.
+   This is simple.
+   Cold Backup can be taken by System Administrator as well!
+b) Hot Backup: Hot Backup is taken when the Database is getting used, 
+   so DB is online.
+   Hot Backup can ONLY be taken by DBA.
+
+ 
+
+---------------------------------------------------------------
+
+ 
+
+There are 3 types of Backups as per Data in that backup:
+1) Full Backup
+2) Incremental Backup OR Differential Backup (in SS)
+3) Transaction Log Backup
+
+ 
+
+
+1) Full Backup: ALL Data files and LOG files backup at a particular point of time is taken.
+This is the FIRST TIME backup.
+Simplest of all the backups.
+Full Backup will consume lot of disk space.
+Full Backup are slow.
+
+ 
+
+2) Incremental Backup OR Differential Backup (in SS):
+* For taking the Incremental or Differential backup you MUST have first taken the Full Backup.
+Formula will be as follows:
+Backup Strategy  = 1 Full Backup + Incremental or Differential backups of every day
+Incremental or Differential backups generally are scheduled.
+Incremental or Differential backups are not that SLOW.
+We can have multiple Incremental or Differential backups in a day with an interval of 1 hour or so.
+
+ 
+
+3) Transaction Log Backup:
+One of the most powerful technique for getting 100% recovery.
+All the changes done to the database are saved in Transaction Log Backup.
+Transaction Log Backup is handy in the following senarios:
+a) In case of Transaction Log Backup there is a mechanism of "Tail Log Backup".
+Tail Log Backup will have the data which is NOT there in any other previous backups.
+As an DBA we need to explicitly configure the Transaction Log Backup as well as its Tail Log Backup.
+b) To recover the database "at a particular point of time."
+Transaction Log Backup takes MORE space than even the Full Backup.
+
+ 
+
+-----------------------------------------------

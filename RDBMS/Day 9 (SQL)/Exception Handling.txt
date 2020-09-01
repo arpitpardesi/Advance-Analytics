@@ -1,0 +1,22 @@
+Begin try
+----- Actual Code
+-----
+-----
+End Try
+Begin Catch
+-----  Exception Handling or Run time error handling code
+-----
+End Catch
+---------------------------------
+In Databases the Exception Handling or Run time error handling can be of following things:
+1) Data Type mismatch
+2) Size match
+** 3) Violating Constraints (PK, UK, FK, NN, C)
+4) Permission denied
+5) Disk full 
+6) Database offline
+7) Network disconnectivity
+--------------------------------------------
+In any database, every run time error is always associated with 2 things:
+1) pre defined error number
+2) pre defined error message.

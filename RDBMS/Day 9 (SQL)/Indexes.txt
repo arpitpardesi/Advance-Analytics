@@ -1,0 +1,34 @@
+Indexes:
+Why Index?
+1) For faster access of data
+2) For proper physical organization of rows inside the Data File (s) 
+   (MDF & NDF)
+
+ 
+
+Whenver table is NOT indexed then "FULL Table Scan" will happen to get 
+the desired rows.
+
+ 
+
+In any Database basically there are two distinct types of indexes:
+1) Logical Index
+2) Physical Index
+
+ 
+
+1) Logical Index: The rows are NOT physically sorted in data files. But 
+   the pointers to data value are kept in a separate binary structure. 
+   Means data value and records numbers are kept track of separatly.
+One table can have multiple Logical Indexes.
+In SS Logical Index is termed as "Non-Clustered Index"
+Imp point: Columns which have repeating values are best for Logical Index.
+
+ 
+
+2) Physical Index: The rows are physically sorted in data files. 
+One table can have only ONE Physical Indexes.
+Imp point: Columns which have UNIQUE values (PK or UK)  are best for that.
+In SS Physical Index is termed as "Clustered Index".
+Whenver PK or UK is created in any database then a Physical Index gets 
+created for that column.

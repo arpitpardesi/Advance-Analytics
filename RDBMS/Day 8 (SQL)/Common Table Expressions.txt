@@ -1,0 +1,27 @@
+Common Table Expressions (CTE):
+
+1) CTE is an advanced version of Derived Table (DT)
+There is one major limitation of DT:
+The DT itself cannot be used as a table name further in any sub query or in any other query. This problem gets solved using CTE!!!
+
+ 
+
+How it is done?
+Initially, the common resultset is declared on the top using With key word.
+Then that resultset can be multiple times queried directly in the from 
+clause in further main select statement or in sub query or queries 
+involving set operators.
+
+For example:
+with abcd as
+(select....
+......
+) -- Common Result Set
+Select * from abcd
+where col1 > (select col2
+                        from abcd)
+Union All
+select 123
+from abcd
+
+ 

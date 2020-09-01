@@ -1,0 +1,11 @@
+Benefits of SP:
+1) Code resides the database. So that code is protected. Nobody directly can see the code of execute that sp (unless user gives permission).
+2) Reusability of the code
+3) SP will be the combination of programming statements and SQL statements.
+4) The SQL statements are stored in pre compiled format if they are inside an sp.
+Compilation means:
+    a) Checking syntax
+    b) Check objects are existing or not
+    c) Check the permissions
+    d) Set Execution Plan
+5) SP can accept Parameters

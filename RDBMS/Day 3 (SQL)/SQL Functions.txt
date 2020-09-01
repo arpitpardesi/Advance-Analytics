@@ -1,0 +1,15 @@
+SQL Functions are of two types:
+1) Built in
+
+2) User Defined (UDF)
+----------------------------------------------------------------------
+1) Builtin SQL Functions types:
+    a) ANSI
+    b) Proprietory
+
+   Builtin SQL Functions based on their return value are of 3 types:
+    1) Scalar -- String, Numeric, Date, Null Handling, Conditional, Cast
+
+    2) Aggregate Functions
+    3) Table Valued Functions (TVF)
+    4) Windowing Function

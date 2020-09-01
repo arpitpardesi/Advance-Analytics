@@ -1,0 +1,24 @@
+Temporary Tables (TT):
+
+ 
+
+TTs in SS are of 2 types:
+
+ 
+
+1) Local and 2) Global
+
+ 
+
+1) Local: The local TT is specific to the session in which it is created. It cannot be accessed by the other concurrent sessions.
+Prefixed by #
+
+ 
+
+2) Global: The global TT can be accessed by the other concurrent sessions.
+Prefixed by ##
+
+ 
+
+TT gets stored in the System Database "TempDB"
+ 

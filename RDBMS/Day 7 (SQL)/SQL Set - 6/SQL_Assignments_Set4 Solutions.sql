@@ -1,0 +1,97 @@
+SELECT * FROM EMP
+SELECT * FROM DEPT
+
+--Q1
+select e.*,d.DNAME
+from emp e join dept d
+on e.DEPTNO=d.DEPTNO
+where job != 'Salesman' and job != 'Analyst'
+
+--Q2
+SELECT E.ENAME,E.ENAME+' WORKS IN '+D.DNAME AS 'Department Name'
+FROM EMP E JOIN DEPT D
+ON E.DEPTNO=D.DEPTNO
+--Q3
+
+SELECT DEPTNO, MAX(SAL) FROM EMP GROUP BY DEPTNO
+
+select D.DNAME, E.JOB, max(e.sal) as 'SAL'
+from EMP E left outer JOIN DEPT D
+ON E.DEPTNO = D.DEPTNO
+group by e.DEPTNO,d.DNAME,e.JOB
+order by D.DNAME
+
+--Q4
+
+SELECT E.ENAME, D.DNAME, D.LOC, E.JOB 
+FROM EMP E JOIN DEPT D
+ON E.DEPTNO = D.DEPTNO
+where E.JOB = 'MANAGER'
+AND E.SAL > 2900
+
+--Q5
+
+SELECT E1.ENAME 
+FROM EMP E1 JOIN EMP E2
+ON E1.MGR = E2.EMPNO
+where E2.ENAME = 'KING'
+
+--Q6
+SELECT count(E1.ENAME) 
+FROM EMP E1 JOIN EMP E2
+ON E1.MGR = E2.EMPNO
+where E2.ENAME = 'KING'
+
+--Q7
+
+SELECT 'The Manager of '+E1.ENAME+' is '+E2.ENAME 
+FROM EMP E1 JOIN EMP E2
+ON E1.MGR = E2.EMPNO
+--Q8
+SELECT C.CUSTNAME
+FROM CUSTOMERS C JOIN FLIGHTS F
+ON C.FlightNo=F.FlightNo
+WHERE F.STATUS = 'Departure On Time'
+
+--Q9
+SELECT C.CUSTNAME
+FROM CUSTOMERS C JOIN FLIGHTS F
+ON C.FlightNo=F.FlightNo
+WHERE F.Route != 'Pune-Bangalore'
+
+SELECT * FROM CUSTOMERS
+
+SELECT * FROM FLIGHTS
+
+--Q10
+SELECT C.CUSTNAME
+FROM CUSTOMERS C JOIN FLIGHTS F
+ON C.FlightNo=F.FlightNo
+WHERE F.GateNo = 'G1'
+
+--Q11
+SELECT C.CUSTNAME
+FROM CUSTOMERS C JOIN FLIGHTS F
+ON C.FlightNo=F.FlightNo
+WHERE F.Route = 'Pune-Chandigad'
+AND F.FlightName = 'King Fisher'
+
+
+--Q12
+SELECT * FROM Payment_Details
+SELECT * FROM Customer_Details
+
+
+SELECT C.CUSTID, C.CNAME,P.AMOUNT, CASE
+				WHEN P.AMOUNT IS NULL THEN 'Customer absent in Payment_Details'
+				ELSE 'Customer Present in Payment_Details'
+			end as 'Remark'
+FROM Payment_Details P RIGHT OUTER JOIN Customer_Details C
+ON P.CUSTID = C. CUSTID
+
+--Q13
+SELECT C.CUSTID, C.CNAME,P.status , P.AMOUNT
+FROM Payment_Details P RIGHT OUTER JOIN Customer_Details C
+ON P.CUSTID = C. CUSTID
+
+

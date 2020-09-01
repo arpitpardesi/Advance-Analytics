@@ -1,0 +1,6 @@
+Derived Table (DT)
+DT means writing a sub query after "From" clause.
+So, a resultset gets created as per that sub query .
+Provide a alias to that resultset.
+Then, finally we will query that resultset.
+

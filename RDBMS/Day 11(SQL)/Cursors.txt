@@ -1,0 +1,26 @@
+Cursors:
+
+ 
+
+Cursor is a mechanism in any Database which gives us ability to process (delete row or update values of the row) or fetch (select that row) ONE row at a time.
+
+ 
+
+Cursor is a named area in memory (or buffer or cache) which will hold all the records.
+The records from that area are given to the user one at a time.
+
+ 
+
+Mechanism of Cursor:
+1) Declare the cursor. Means we will mention which rows will be in the memory.
+2) Declare the scalar variable (s) as per the column (s) of cursor which will hold the value (s) of each row at a time.
+3) Open the cursor. Memory allocation happens.
+4) Fetch first row and process it.
+5) Inside Loop
+    5.1) Fetch next row and process it.
+    5.2) Continue 5.1 till the last row is fetched & processed.
+6) Came outside Loop -- Close the cursor. Access denied to rows.
+7) Deallocate the cursor.
+----------------------------------------------------
+Cursors are having scope in that session.
+They are session specific and NOT batch specific.
