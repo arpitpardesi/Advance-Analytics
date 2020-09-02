@@ -30,7 +30,7 @@ DECLARE Check_Record CURSOR
     FOR 
 		if()
 			begin
-
+			--lag()
 			end
 
 		
