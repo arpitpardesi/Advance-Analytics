@@ -1,17 +1,76 @@
 --q1
-Declare @w integer
+Declare @w integer, @s varchar(Max)
 set @w = 31
 while @w <= 98
 begin
-    print @w * 7+'-';
-    set @w = @w + 1;
-end;
+	if @s != '' 
+		set @s = @s+cast(@w * 7 as varchar)+'-'
+    else
+		set @s =cast(@w * 7 as varchar)+'-'
+	set @w = @w + 1;
+end
+print @s
 ----------------------------
 --q2
+
+DECLARE @sal1 int, @sal2 int, @c int
+set @c = 0
 Declare SalCheck Cursor
+for select SAL, lag(SAL,1) over(order by empno) as "Previous"
+	from EMP
+    where job = 'clerk'
+	
+open SalCheck
+
+fetch next from SalCheck
+into @sal1, @sal2
+
+while @@FETCH_STATUS = 0
+Begin
+	set @c = @c + 1
+	if(@c = 3)
+		if(@sal1 > @sal2)
+			print 'Third has more salary than the second' 
+				else
+					print 'Second has more salary than the third'
+			
+	fetch next from SalCheck
+	into @sal1, @sal2
+
+end	
+CLOSE SalCheck;    
+DEALLOCATE SalCheck;  
 
 
 --q3
+
+DECLARE @sal1 int, @sal2 int, @c int
+set @c = 0
+Declare SalCheck Cursor
+for select SAL, lag(SAL,1) over(order by empno) as "Previous"
+	from EMP
+    where job = 'clerk'
+	
+open SalCheck
+
+fetch next from SalCheck
+into @sal1, @sal2
+
+while @@FETCH_STATUS = 0
+Begin
+	set @c = @c + 1
+	if(@c = 3)
+		if(@sal1 > @sal2)
+			print 'Third has more salary than the second' 
+				else
+					print 'Second has more salary than the third'
+			
+	fetch next from SalCheck
+	into @sal1, @sal2
+
+end	
+CLOSE SalCheck;    
+DEALLOCATE SalCheck;  
 
 
 --q4
@@ -26,18 +85,31 @@ insert into Emp_Coupons values ('Adams',88)
 insert into Emp_Coupons values ('Kim',89)
 select * from Emp_Coupons
 
-DECLARE Check_Record CURSOR
-    FOR 
-		if()
-			begin
-			--lag()
-			end
+Declare @name varchar(20), @coupon int, @preCou int
+set @preCou = 0
+Declare Coupon_Check Cursor 
+for select Name, Coupon_No 
+	from Emp_Coupons
+	
+open Coupon_Check
 
-		
-		
-		select *,
-		LAG(Coupon_No,1) over(order by name) as "Previous"
-		from Emp_Coupons
+fetch next from Coupon_Check
+into @name, @coupon
+
+while @@FETCH_STATUS = 0
+Begin
+	
+	if(@preCou = 0)
+		set @preCou = @coupon 
+	else if(@coupon > @preCou)
+		print @name
+	fetch next from Coupon_Check
+	into @name, @coupon
+
+end	
+CLOSE Coupon_Check;    
+DEALLOCATE Coupon_Check;  
+
 ----------------------------------------------------
 --q5
 drop table Company_Data
@@ -140,7 +212,7 @@ select * from Emp_Dept
 
 create trigger DML_On_View
 on Emp_Dept
-for Insert, Update, delete
+for Insert
 AS
 	BEGIN
 		
@@ -151,26 +223,37 @@ AS
 create table Inflation_Data
 		(Year int,
 		 Inflation_Amount int)
-insert into Inflation_Data values(2010, 1900)
+
+insert into Inflation_Data values(2011, 2000)
+
 select * from Inflation_Data
 
 delete from Inflation_Data
+
+drop trigger Check_Inflation_Data
 
 Create trigger Check_Inflation_Data 
 on Inflation_Data
 for insert
 as
-	begin
-	if(((select Year from Inserted) > (select max(year) from Inflation_Data)) 
-	and ((select Inflation_Amount from Inserted) > (select max(Inflation_Amount) from Inflation_Data)))
+begin
+	Declare @year int, @amo int
+
+	set @year = (select max(Year) from Inflation_Data)
+	set @amo = (select max(Inflation_Amount) from Inflation_Data)
+	print 'Outside'
+	if ((select Year from Inserted) > @year and (select Inflation_Amount from Inserted) > @amo)
 		begin
-			Insert into Inflation_Data
+			print 'Inside'
+			insert into Inflation_Data
 			select * from Inserted
 		end
-	end
+end
+go
 
 -------------------------
 --10
+
 create procedure Show_Max_Salary (@DName varchar(50),@Max_Sal int output)
 as 
 set @Max_Sal = (select max(e.SAL) 
