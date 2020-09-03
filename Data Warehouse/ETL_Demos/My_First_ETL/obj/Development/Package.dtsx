@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="9/1/2020 2:58:02 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{A834ABD8-C33C-4B0E-8B94-010C86E4E1C0}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{F977B6D7-AA7D-4CC2-B20D-ED61788A57AB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1424,7 +1424,6 @@ FROM EMP</property>
       DTS:refId="Package\DFT4_SortingTransformation"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{D667E57D-4830-4CB7-AFAF-09692A8EBB0C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
