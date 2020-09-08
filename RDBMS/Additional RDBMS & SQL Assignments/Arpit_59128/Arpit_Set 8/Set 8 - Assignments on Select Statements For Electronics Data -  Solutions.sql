@@ -11,9 +11,10 @@ go
 
 select distinct SP.Salesman_Name
 from Transactions T join Sales_Persons SP
-on SP.Salesman_Id = T.Salesman_Id
+on T.Salesman_Id = SP.Salesman_Id
 join Area A on T.Area_Id = A.Area_Id
 where A.Area_Name = 'Aundh' and t.Qty_Sold = 1
+
 
 --q2 -Item_master,Sales_Persons, Transactions
 select distinct IM.Item_Cost*sum(T.Qty_Sold) over() as"Total Billing amount"

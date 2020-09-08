@@ -45,16 +45,24 @@ where O.purch_amt > (select avg(purch_amt)
 					 where ord_date = '2012-10-10')
 
 --q9 *****
-with SecondLowest 
-as(
-select E.EMP_FNAME,E.EMP_LNAME, ED. DPT_ALLOTMENT, ED.DPT_CODE, dense_rank() over(Partition by ED.DPT_CODE order by  ED.DPT_ALLOTMENT) as "EMP_RANK"
-from emp_details E Join emp_department ED
-on E.EMP_DEPT = ED.DPT_CODE
-)
-select * from DeptWise_Rank
-where EMP_RANK = 2
+SELECT emp_fname, emp_lname 
+FROM emp_details 
+WHERE emp_dept IN (SELECT dpt_code
+                   FROM emp_department 
+                   WHERE dpt_allotment = (select top 1 dpt_allotment from emp
+										  where dpt_allotment in (select top 2 dpt_allotment 
+																  from emp_department
+																  order by dpt_allotment)
+                                          order by dpt_allotment desc
+
 
 --q10 ***
+
+select S.name, C.Cust_name
+from Salesman S
+Join Customer C on S.salesman_id = C.salesman_id
+Where 
+
 select name from Salesman
 where city = 'London'
 union
@@ -77,9 +85,9 @@ from Customer
 group by grades
 
 --q13
-
+create view Track as
 select Distinct count(ord_no), count(salseman_id), avg(purch_amt), sum(purch_amt)
-from emp
+from orders
 
 --q14
 create view Sale_Cust as 
@@ -136,40 +144,35 @@ where C.city = 'Paris'
 
 --21.2 
 
-select * from countries --country name
-select * from regions --region name
+--select * from countries --country name
+--select * from regions --region name
 --select * from departments --department id, department name
 --select * from employees ---Employeeid, employee name, the Employee’s salary
 --select * from jobs  --job title, Difference in the maximum salary
 --select * from job_history --Start date of job, end date of job
-
+select * from locations
 --21.2.1  SQL 89
-select E.employee_id, E.first_name+' '+E.last_name AS "Name", D.department_id,D.department_name 
-from employees E, departments D
+Select E.employee_id, (E.first_name+e.last_name) as "Name", D.department_id, D.department_name,
+	   JH.start_date, JH.end_date, J.job_title, C.country_name, R.region_name, 
+	   (max(J.max_salary) over()) - E.salary as "Difference"
+from employees E, departments D, job_history JH, jobs J, locations L, countries C, regions R
 where E.deparment_id = D.department_id
+  and D.department_id = JH.department_id
+  and JH.job_id = J.job_id
+  and D.location_id = L.location_id
+  and L.country_id = C.country_id
+  and C.region_id = R.region_id
+	
 
 --21.2.2  SQL 92
-select distinct E.employee_id, E.first_name+' '+E.last_name AS "Name" , D.department_id,D.department_name,
-	   JH.start_date, JH.end_date, J.job_title
-from employees E 
-join departments D on E.deparment_id = D.department_id
-join job_history JH on JH.employee_id = E.employee_id
-join jobs J on J.job_id = E.job_id
 
-
-cross join (select * 
-from countries C
-join regions R on c.regiod_id=r.region_id ) CR
-
-
-
-(MAX(E.SALARY) - E.salary) as "Difference", E.salary
-GROUP BY E.employee_id,e.first_name,e.last_name, D.department_id, D.department_name, 
-		 JH.start_date, JH.end_date, J.job_title, E.salary
-
-SELECT MAX(SALARY) FROM employees
-
-
-select * 
-from countries C
-join regions R on c.regiod_id=r.region_id 
+Select E.employee_id, (E.first_name+e.last_name) as "Name", D.department_id, D.department_name,
+	   JH.start_date, JH.end_date,J.job_title, C.country_name, R.region_name, 
+	   (max(J.max_salary) over()) - E.salary as "Difference"
+from employees E
+join departments D on D.department_id = E.deparment_id
+join job_history JH on D.department_id = JH.department_id
+join jobs J on JH.job_id = J.job_id
+join locations L on D.location_id = L.location_id
+join countries C on L.country_id = C.country_id
+join regions R on C.region_id = R.region_id

@@ -202,6 +202,8 @@ on E.DEPTNO = D.DEPTNO
 
 select * from Emp_Dept
 
+select * from dept
+
 insert into Emp_Dept(EMPNO, ENAME, SAL, JOB, DEPTNO) values(100,'ARPIT', 100, 'Analyst', 20)
 
 update Emp_Dept
@@ -209,49 +211,25 @@ set SAL= 3000
 where ENAME = 'Arpit'
 
 delete from Emp_Dept
-where EMPNO = 100
+where ENAME = 'Arpit'
+
 
 drop trigger DML_On_View
 
-CREATE TRIGGER DML_On_View
-ON Emp_Dept
-Instead Of UPDATE, INSERT, DELETE 
-AS
-BEGIN
-	DECLARE @Activity  NVARCHAR (50)
-	-- update
-	IF EXISTS (SELECT * FROM inserted) AND EXISTS (SELECT * FROM deleted)
-	BEGIN
-		SET @Activity = 'UPDATE'
-		print @Activity
-		Declare @sal int, @EMPNO int
-		Set @sal = (Select sal from inserted)
-		set @EMPNO = (Select EMPNO from inserted) 
-		update Emp_Dept
-		set SAL= @sal
-		where EMPNO = @EMPNO
+create trigger DML_On_View
+on Emp_Dept
+Instead of insert,delete,update
+as
+Begin
+	declare @v_day varchar(20)
+select @v_day= datename(dw,getdate()) 
+ if @v_day = 'Sunday' 
+   begin
+ 	print 'No Transactions on Sunday'
+ 	rollback tran
+   end
+end
 
-	END
-	-- insert
-	IF EXISTS (SELECT * FROM inserted) AND NOT EXISTS(SELECT * FROM deleted)
-	BEGIN
-		SET @Activity = 'INSERT'
-		print @Activity
-		Insert into Emp (EMPNO, ENAME, SAL, JOB, DEPTNO)
-		select EMPNO, ENAME, SAL, JOB, DEPTNO from inserted
-	END
-	-- delete
-	IF EXISTS (SELECT * FROM deleted) AND NOT EXISTS(SELECT * FROM inserted)
-	BEGIN
-		SET @Activity = 'DELETE'
-		print @Activity
-		Declare @ENo int 
-		set @ENo = (select EMPNO from deleted)
-		delete from EMP
-		where EmpNo = @Eno
-
-	END
-END
 
 ------------------------------
 --q9
