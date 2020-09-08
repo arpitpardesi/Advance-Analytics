@@ -1,0 +1,42 @@
+SSIS Environment:
+
+Any SSIS Project is a collection of one or multiple Packages.
+
+Package is also considered as a "File" for execution (running)
+
+Its extension is always .dtsx.
+
+Technically every SSIS package is a xml file!
+
+By using GUI the xml code in that file gets generated!!!
+
+-----------------------------------------------------
+
+Package is collection of one or multiple tasks.
+
+A Task is either a ETL task or Non-ETL task.
+
+The ETL Task is "Data Flow Task"
+
+Remaining all are Non-ETL tasks.
+
+-----------------------------------------------------------------------
+
+
+Control Flow :  The tasks have to be placed in the Control FLow. That means Control Flow is the execution area of that package. The area of Control Flow is termed as Design Surface where the tasks are placed.
+
+WorkFlow: All the Tasks follow protocol of an WorkFlow
+
+
+Control Flow should have at least ONE task for executing the package.
+
+*** Control Flow will have capability of acheiving an "Work Flow" amongst the multiple task.***
+
+
+
+
+
+
+
+
+

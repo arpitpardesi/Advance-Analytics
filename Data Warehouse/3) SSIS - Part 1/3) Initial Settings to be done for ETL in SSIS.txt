@@ -1,0 +1,29 @@
+Initial Settings to be done for ETL in SSIS:
+
+OLE DB Source should be taken when source is RDBMS such as SQL Server, Oracle, etc.
+
+Connection Manager: The Connection Manager has the meta data of source and target.
+
+Connection Manager properties are different for different types of sources and targets.
+
+Server Name: In case of SQL Server as a RDBMS the server name will be as follows:
+
+		Server Machine Name/SQL Instance Name
+		or
+		Server IP Address/SQL Instance Name
+
+If we have the default instance then only "." can also work.
+When other than default instance is created then the instance name needs to be mentioned.
+"SQL Express" is the instance name.
+
+
+
+
+
+
+
+
+
+
+
+

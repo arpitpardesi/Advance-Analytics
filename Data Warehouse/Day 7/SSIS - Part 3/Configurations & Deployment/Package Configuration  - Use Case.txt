@@ -1,0 +1,60 @@
+-------------------------------------------------------
+On 1-Jan-2020 ETL project kick off was done.
+Off shore model, so that means client is in USA & Development is done from India.
+In Pune we have Servers, hard disk, means all infrastructure.
+Pune is Dev Environment.
+Duration: It's a entire 1 Year Project.
+4 months, till 31-Dec-2020.
+----------------------------------------------------
+-------------------------------------------------------
+From 1st Jan 2021 "Go Live" phase is there.
+Moving from Dev to Prod Env.
+Prod Env is in USA.
+-------------------------------------------------------
+-------------------------------------------------------
+When we move from Dev to Prod Env then following things will get changed in the Prod Env :
+1) File names of source and or target.
+2) * File paths
+3) Database Server Names or IP Addresses
+4) Database Names
+5) Logins and User Names.
+6) Privileges will differ.
+7) Operating System (Versions)
+8) RAM, processors (Hard ware infra)
+9)*** Volume of Data will increase drastically***
+10) Package Variable values will get changed.
+------------------------------------------------------
+-------------------------------------------------------
+What is actually Package Configuration?
+1) In the Dev Env all the things which are going to change will be stored in an XML file.
+2) The XML file will be linked with each of the package.
+3) Later, when we move from Dev to Prod Env along with all the packages the XML file will also be moved.
+4) Open the XML file in Prod Env, do the necessary changes to the property values as per Prod Env.
+5) Finally run the packages successfully in Prod Env!!
+
+Advantage: We do not have to open each package physically in SSDT and do the changes. All the changes are done in one single XML file. Those changes will be reflected in all the packages. Further also any change becomes easier to manage.
+
+Mechanism: If the Package Configuration is done then when the package is loaded in SSDT or when the Package is run then initially all the latest values of that XML file will be loaded in that package.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+How Variables can be used in ETL Tool?
+1) For storing the SQL statements required for source or destination.
+2) To store the connection manager information of 
+source or destination when it is going to be Database such as SQL Server, Oracle, etc.
+E.g. Server Name, Database Name, etc.
+3) To store the file names along with file paths when Flat file or Excel is the source or destination.
+-----------------------------------------------------------
+Variables in SSIS are of 2 types:
+1) User Defined
+2) System Defined
+
+System Defined Variables: Useful to know the meta data of SSIS package.
+
+
+
+
+
+

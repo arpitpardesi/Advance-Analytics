@@ -1,0 +1,23 @@
+Challenges when data comes from different varied heterogenous sources:
+1) Data types may be different
+2) Size may be different even if data type is same
+3) Date Formats may be different
+4) ** Business Rules or Data Validations rules are different
+5) Nullability rules can be different
+
+ETL
+
+There are 2 types of Load in ETL:
+
+1) Full Load -- First time load
+
+2) Incremental Load -- Every day load, generally this will be Scheduled
+
+
+
+
+
+
+
+
+

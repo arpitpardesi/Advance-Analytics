@@ -1,0 +1,3 @@
+Execute SQL Task (EST):
+EST will execute SQL commands (DDL, DML or even DCL) either before the ETL execution or after the ETL execution. Due to this the entire package execution becomes smooth & independent.
+You can also call an SP in the EST.

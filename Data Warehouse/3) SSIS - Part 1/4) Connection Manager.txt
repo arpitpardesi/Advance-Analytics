@@ -1,0 +1,22 @@
+Connection Manager (CM)
+
+CM is always associated with every Source and Target / Destination.
+
+CM has the meta data of the Source and Target / Destination.
+
+Meta Data means Server Name or IP Address, Database Name, User Authentication, File Name, File Path, Delimiter info, etc.
+
+---------------------
+
+Server Name of SQL Server: 
+If you have the default Instance on the SAME machine then you can mention either of the following:
+1) .
+2) localhost
+3) MachineName
+4)IP Address
+
+*** But in Projects it will NOT be the same machine on which SS is installed.
+So, there it will be ServerMachineName\InstanceName
+or ServerMachineIPAddress\InstanceName
+
+

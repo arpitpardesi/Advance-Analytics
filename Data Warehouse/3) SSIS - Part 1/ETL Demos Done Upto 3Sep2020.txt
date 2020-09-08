@@ -1,0 +1,26 @@
+ETL Demos using SSIS:
+1) Transfer all records of Emp table of SS into a Text File.
+2) Transfer Job wise Sum of Sal of Emp table of SS into a Text File using Aggregate Transformation.
+3) Transfer Empno, Ename, Job, Sal of Emp table of SS into a Text file. Along with the 4 columns a new column Annual_Salary (Sal * 12) should also get transferred in the Text file. In the source do not select the table write SQL query. -- Using Derived Column Transformation.
+4) Transfer Empno, Ename, Job, Sal of Emp table of SS into a Text file. Records should get entered in text file sorted as per ename A to Z -- Using Sort Transformation.
+5) Transfer records of Emp_Clerks and Emp_Managers in a text file -- Using Union All Transformation.
+6) Transfer Analyst, Salesman and other records -- Using Conditional Split Transformation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+How ETL can be done?
+
+ETL can be done by coding (or scripting) 
+OR 
+***is done by GUI tools
+
+By Coding: Every RDBMS has its own mechanism to do ETL by coding.
+
+GUI tools are having RAD + IDE
+
+Names of some GUI tools of ETL:
+1) Informatica
+2) Data Stage (IBM)
+3) Oracle Data Integrator 
+4) Ab Initio
+5) Teradata Parallel Transporter
+6) SQL Server Integration Services (SSIS) from Microsoft
+.... The list can go on.......
+
+
+
+
+
+
