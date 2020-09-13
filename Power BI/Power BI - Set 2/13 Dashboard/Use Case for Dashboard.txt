@@ -1,0 +1,35 @@
+Dev1, Dev2 and Dev3 are 3 PBI Developers:
+PBI Desktop
+
+	Dev1  -- for pre paid customers   
+	(80 reports, totally 800 Visuals)  Excel, TeraData and Flat Files
+
+	Dev2 -- for international customers 
+	(60 reports, totally 600 Visuals)  Excel, Oracle and Azure
+
+	Dev3 --  for amounts outstanding customers 
+	(40 reports, totally 400 Visuals) Excel, SS and XML
+----------------------------------------------------------------------------------------------------------
+ALL 180 reports are Published in PBI Service, 
+Totally 1800 Visuals are in PBI Service!!!!!!!!!!!!
+
+----------------------------------------------------------------------------------------------------------
+Top Management
+
+	10 V of Dev1 + 6 V of Dev2 + 3 V of Dev3 = 19 V  = 1 Dashboard
+
+Visuals are Pinned
+
+---------------------------------------------------------------------------------------------
+
+Pinning of Visuals in Dashboard can be done in following 2 ways:
+
+1) Pinning Selective Visuals from multiple pages of one or multiple reports in ONE Dashboard.
+
+2) Pinning  Live Page (Entire Page).
+
+
+
+
+
+

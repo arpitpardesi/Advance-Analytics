@@ -1,0 +1,32 @@
+Row Level Security (RLS)
+
+50% PBI Developer and remaining 50% PBI Administrator is doing RLS.
+
+Role in PBI: It means a DAX boolean condition which will show specific data.
+That means the filter condition is given in the role. That filter condition as per the users who will see the report.
+
+In PBI the process is as follow:
+1) The PBI Developer creates the role. Publishes the Report
+2) The PBI Administrator will mapp that role with User (s) or Group (s)
+
+--------------------------------------------------------------------------------------
+
+There are 2 types of Power BI Users:
+
+1) Power BI Pro
+
+2) Power BI Premium
+
+--------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

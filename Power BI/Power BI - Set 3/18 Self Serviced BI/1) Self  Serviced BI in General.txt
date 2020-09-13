@@ -1,0 +1,28 @@
+Self  Serviced BI in General:
+
+Any Report (any technology or tool) has two MAIN compnents in Dev work:
+
+1) Data Model (100% Technical work)
+
+
+2) Presentation Layer (100% Non  - Technical work)
+
+-------------------------------------------------------------------------
+ In Self  Serviced BI there will be following protocol:
+1) Data Model is created by Dev and published in the Report Server (or Cloud).
+2) Then End User (Non-IT user) will create the presentation layer on that Data Model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

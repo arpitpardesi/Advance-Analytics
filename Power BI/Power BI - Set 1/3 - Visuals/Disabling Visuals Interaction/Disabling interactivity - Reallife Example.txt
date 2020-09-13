@@ -1,0 +1,4 @@
+In a sales dashboard, when a user changes currency of sales amount, it need not change percentage sales by-product since functionally these 2 charts may not be related. 
+
+You can disable interactivity between components that are not functionally related. 
+

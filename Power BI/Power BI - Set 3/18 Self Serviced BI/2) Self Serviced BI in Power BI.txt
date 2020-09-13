@@ -1,0 +1,26 @@
+Self Serviced BI in Power BI can be implemented by either of the following 3 ways:
+
+1) Creating a report in PBI Service by using the already published data set.
+
+2) Creating a report in PBI Service by importing a table formatted Excel file in PBI Service and then creating report
+
+3) Creating a Workbook in PBI Service by uploading a normal Excel file in PBI Service and then creating Dashboards based on the charts of that Excel file!!!
+
+--------------------------------------------------------------------------------------------
+Using a Published Dataset in PBI Desktop
+
+4) Creating a report in PBI Desktop by using the already published data set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,23 @@
+Why or when Tables have to be explicitly created in PBI?
+
+"Calculated Tables"
+
+1) For populating an Independent Time Dimension table having all the date & time functions in the columns.  (Typical BI Project feature)
+The date and time populated table will be joined with the business table and used in reports.
+
+2) To show some specific records of a table in a new table. (Exact same as that of View object of Database) That is ,conditional records of the imported table are shown in that newly created table.
+
+*******3) To populate Summary Tables. Those Summary Tables will be useful further to get joined with existing imported tables as well as those Summary Tables will be useful further in creating Visuals.
+
+
+
+
+
+
+
+
+
+
+
+
+

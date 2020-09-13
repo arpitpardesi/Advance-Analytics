@@ -1,0 +1,14 @@
+Hierarchy:
+
+In PBI to have a drill down in a Visual we need to have a Hierarchy.
+
+There are 2 types of Hierarchies in PBI:
+1) Implicit
+2) Explicit
+
+1) Implicit -- For imported table's Date Column
+
+2) Explicit --  Created by User or Developer:
+	2.1) Can be private for a Visual
+
+	2.2 ) Can be a column of the table. Reusable for all Visuals (Public)

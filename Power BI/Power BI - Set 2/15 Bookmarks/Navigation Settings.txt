@@ -1,0 +1,4 @@
+1) Insert Tab, "Elements" Section 
+2) Take "Blank" from Button
+3) Button Text Property make on and provide the caption
+4) ** Action property, Type Bookmark, Bookmark -- Select your Bookmark!!!!

@@ -1,0 +1,10 @@
+Check list for getting connected with Database such as SQL Server:
+1) Server Name -- In Projects it will be MachineName\InstanceName
+2) Database Name -- Required only when table is NOT selected, but SQL statement (select statement) is typed.
+** 3) Data Connectivity Mode: Either Import or Direct Query.
+
+4) Advanced options (optional):
+4.1)SQL statement-- When SQL statement (select statement) is to be typed. OR Execute an SP
+4.2) Command timeout (Consult DBA)
+
+

@@ -1,0 +1,11 @@
+Power BI Assignments:
+
+1) Set 8 of Additional Assignments should be converted as PBI Reports & Dashboards.
+
+2) Set 10 of Additional Assignments should be converted as PBI Reports & Dashboards.
+***** Add quality records in the tables first and then visualize in PBI.
+
+3) Try to convert the outputs of Set 7 of Additional Assignments should be converted as PBI Reports & Dashboards.
+
+
+

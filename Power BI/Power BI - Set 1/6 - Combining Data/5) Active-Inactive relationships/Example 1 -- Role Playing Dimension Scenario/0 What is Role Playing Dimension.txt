@@ -1,0 +1,12 @@
+Role Playing Dimensions:
+
+What is Role Playing Dimension???
+
+Answer: A table with multiple valid relationships between itself and another table is known as a role-playing dimension. 
+
+----------------------------------------------------------------------
+
+Scenario of Role Playing Dimension:
+
+This is most commonly seen in dimensions such as Time and Transactions, where in from Time dimension there is Date as PK and the same Date will act as FK in multiple columns of the transactions table such as OrderDate, ShipDate and DueDate.
+

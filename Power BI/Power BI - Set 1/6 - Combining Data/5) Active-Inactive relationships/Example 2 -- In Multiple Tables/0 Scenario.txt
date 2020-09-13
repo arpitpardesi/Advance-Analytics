@@ -1,0 +1,10 @@
+
+There are 3 tables involved in the relationship:
+
+1)    Table 1, i.e. Country_Master is related with Table 2, i.e. Customers (One to Many - Country_ID is common)
+
+2)    Table 2, i.e. Customers is related with Table 3, i.e. Transactions  (One to Many - CustomerID is common)
+
+3)    Table 3, i.e. Transactions is related with Table 1, i.e. Country_Master 
+        (Many to One - Country_Tax is common)
+
